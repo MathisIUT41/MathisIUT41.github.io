@@ -123,6 +123,8 @@ h2::before {
 .projet-type { font-size: 0.8rem; color: var(--texte-secondaire); font-weight: normal; }
 .langages-projets { font-size: 0.75rem; color: var(--accent); font-weight: 500; margin-bottom: 0.5rem; }
 .description { font-size: 0.85rem; color: var(--texte-secondaire); }
+.description a { color: var(--accent); font-weight: 500; white-space: nowrap; }
+.description a:hover, .description a:focus-visible { color: #fff; }
 
 .timeline { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
 .timeline li { font-size: 0.85rem; color: var(--texte-secondaire); display: flex; gap: 1rem; align-items: baseline;}
