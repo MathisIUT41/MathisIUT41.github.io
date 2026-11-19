@@ -1,0 +1,182 @@
+
+    body {
+    display: flex;
+    flex-direction: column; /* Aligne la grille, l'input et le bouton verticalement */
+    align-items: center;    /* Centre horizontalement */
+    justify-content: center; /* Centre verticalement si le body fait toute la hauteur */
+    min-height: 100vh;      /* Oblige le body à prendre toute la hauteur de l'écran */
+    margin: 0;
+    background-color: #121213; /* Couleur de fond Wordle */
+    color: white;
+    font-family: Arial, sans-serif;
+}
+        #grille {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: fit-content; /* S'adapte à la largeur des lignes */
+    
+}
+
+.ligne {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+.case {
+    width: 50px;  /* Réduit de 60px à 50px */
+    height: 50px; /* Réduit de 60px à 50px */
+    border: 2px solid #3a3a3c;
+    background-color: #121213;
+    font-size: 1.8rem; /* Ajusté pour la lisibilité */
+    font-weight: bold;      
+    display: flex;          
+    align-items: center;    
+    justify-content: center; 
+    text-transform: uppercase; 
+    font-family: 'Arial', sans-serif;
+    box-sizing: border-box; /* Indispensable pour garder la taille fixe */
+}
+#Ligne_1, #Ligne_2, #Ligne_3 {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin: 5px 0;
+}
+.Touche{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    min-width: 40px;
+    background-color: #818384;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+.Touche:hover {
+    background-color: #a9a9a9;
+    cursor: pointer;
+}
+.Touche:active {
+    transform: scale(0.95);
+}
+
+/* --- Ajouts : touches en boutons, messages, en-tête, mobile --- */
+button.Touche {
+    border: none;
+    font: inherit;
+    font-weight: bold;
+}
+
+.Touche.large {
+    min-width: 70px;
+    font-size: 0.75rem;
+}
+
+/* Les cases s'adaptent à la longueur du mot et à la largeur de l'écran */
+.case {
+    width: min(50px, calc((100vw - 40px) / var(--nb, 5) - 5px));
+    height: min(50px, calc((100vw - 40px) / var(--nb, 5) - 5px));
+    font-size: min(1.8rem, calc((100vw - 40px) / var(--nb, 5) * 0.5));
+}
+
+.wordle-entete {
+    width: 100%;
+    max-width: 520px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+    box-sizing: border-box;
+}
+
+.wordle-entete h1 {
+    margin: 0;
+    font-size: 1.4rem;
+    letter-spacing: 0.15em;
+}
+
+.retour {
+    color: #aaa;
+    text-decoration: none;
+}
+
+.retour:hover {
+    color: #fff;
+}
+
+#message {
+    min-height: 1.6em;
+    margin: 0 0 12px;
+    padding: 0 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#message.victoire { color: rgb(106, 170, 100); }
+#message.defaite { color: #ff6b6b; }
+#message.info { color: #fff; }
+
+#menu-selection {
+    margin: 15px 0 8px;
+}
+
+#menu-selection select {
+    padding: 6px;
+}
+
+.boutons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#Validation,
+#rejouer {
+    margin: 6px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#Validation { background: rgb(106, 170, 100); }
+#rejouer { background: #3a3a3c; }
+
+:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+@media (max-width: 520px) {
+    #Ligne_1, #Ligne_2, #Ligne_3 {
+        width: 100%;
+        padding: 0 6px;
+        box-sizing: border-box;
+        gap: 4px;
+    }
+
+    .Touche {
+        flex: 1 1 0;
+        min-width: 0;
+        max-width: 34px;
+        padding: 14px 0;
+        font-size: 0.85rem;
+    }
+
+    .Touche.large {
+        flex: 1.6 1 0;
+        max-width: 64px;
+        font-size: 0.6rem;
+    }
+}
+    

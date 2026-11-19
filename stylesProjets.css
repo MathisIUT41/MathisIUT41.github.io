@@ -1,0 +1,150 @@
+/* Page Projets : chaque projet est présenté dans un « écran de borne d'arcade ».
+   Utilise les variables et les classes communes de styles.css (.visuel, .btn-play...). */
+
+.page-projets h1 {
+    text-align: center;
+    margin: 48px 0 0;
+}
+
+.fiche h2 {
+    margin-top: 64px;
+}
+
+/* L'écran de la borne */
+.ecran {
+    position: relative;
+    background: #000;
+    border: 4px solid var(--neon-purple);
+    border-radius: 14px;
+    padding: 32px;
+    box-shadow: 0 0 16px rgba(148, 0, 211, 0.7), inset 0 0 15px rgba(148, 0, 211, 0.4);
+}
+
+/* Lignes de balayage d'un vieil écran cathodique */
+.ecran::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%);
+    background-size: 100% 4px;
+    pointer-events: none;
+}
+
+/* Ici on montre la capture en entier, sans la recadrer */
+.ecran .visuel {
+    aspect-ratio: auto;
+    margin-bottom: 24px;
+    border: 2px solid var(--neon-purple);
+}
+
+.ecran .visuel img {
+    height: auto;
+    max-height: 640px;
+    object-fit: contain;
+}
+
+.ecran .visuel.vide {
+    aspect-ratio: auto;
+    height: clamp(160px, 28vw, 280px);
+}
+
+.fiche-meta {
+    font-family: var(--font-pixel);
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--neon-cyan);
+    margin: 0 0 16px;
+}
+
+.fiche-meta.en-cours {
+    color: var(--neon-pink);
+}
+
+.voyant {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    margin-right: 10px;
+    vertical-align: 2px;
+    background: currentColor;
+    box-shadow: 0 0 6px currentColor;
+}
+
+.fiche-infos {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    align-items: baseline;
+    gap: 10px 24px;
+    margin: 0 0 28px;
+}
+
+.fiche-infos dt {
+    font-family: var(--font-pixel);
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--neon-cyan);
+}
+
+.fiche-infos dd {
+    margin: 0;
+    max-width: 68ch;
+}
+
+/* Bouton d'action : rose plein avec une ombre blanche décalée, comme un bouton de borne */
+.btn-play {
+    position: relative;
+    z-index: 1; /* au-dessus des lignes de balayage */
+    display: inline-block;
+    margin: 0 12px 6px 0;
+    padding: 12px 24px;
+    font-family: var(--font-pixel);
+    font-size: 1.45rem;
+    font-weight: 400;
+    color: #fff;
+    text-decoration: none;
+    background-color: var(--neon-pink);
+    box-shadow: 4px 4px 0 #fff;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.btn-play:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 #fff, 0 0 16px var(--neon-pink);
+}
+
+.btn-play:active {
+    transform: translate(3px, 3px);
+    box-shadow: 1px 1px 0 #fff;
+}
+
+
+/* --- Téléphones --- */
+@media (max-width: 768px) {
+    .page-projets h1 {
+        margin-top: 32px;
+    }
+
+    .fiche h2 {
+        margin-top: 44px;
+    }
+
+    .ecran {
+        padding: 18px;
+        border-width: 3px;
+    }
+
+    .fiche-infos {
+        grid-template-columns: 1fr;
+        gap: 2px;
+    }
+
+    .fiche-infos dd {
+        margin-bottom: 12px;
+    }
+
+    .btn-play {
+        font-size: 1.3rem;
+        padding: 10px 18px;
+    }
+}

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathis Beaussier – Développeur web | Portfolio</title>
+    <meta name="description" content="Portfolio de Mathis Beaussier, étudiant en BUT MMI parcours Développement à l'IUT de Blois : sites WordPress, applications PHP/MySQL et jeux en JavaScript. Stage recherché du 12 avril au 25 juin 2027.">
+    <meta name="theme-color" content="#0d0118">
+    <!-- Aperçu affiché quand le lien est partagé (LinkedIn, Discord...).
+         Une fois le site en ligne, remplace og:image par l'adresse complète de l'image (https://...) et ajoute og:url. -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:title" content="Mathis Beaussier – Développeur web">
+    <meta property="og:description" content="Étudiant en BUT MMI parcours Développement : PHP/MySQL, JavaScript et WordPress. Stage recherché du 12 avril au 25 juin 2027.">
+    <meta property="og:image" content="Images/mathis-profil.jpg">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Jersey+10&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas id="backgroundCanvas" aria-hidden="true"></canvas>
+
+    <header class="hero">
+        <h1 class="glitch">MATHIS BEAUSSIER</h1>
+        <p class="hero-sub">> Développeur web : PHP, JavaScript, WordPress</p>
+        <p class="hero-statut">Stage recherché du 12 avril au 25 juin 2027 (11 semaines)</p>
+        <div class="actions actions-centre">
+            <a href="#projets" class="bouton">Voir mes projets</a>
+            <a href="CV_Mathis_Beaussier.pdf" class="bouton bouton-cyan" download="CV_Mathis_Beaussier.pdf">Télécharger mon CV</a>
+        </div>
+    </header>
+
+    <nav aria-label="Navigation principale">
+        <ul>
+            <li><a href="#profil"><span class="rpg-cursor" aria-hidden="true">►</span>Profil</a></li>
+            <li><a href="#projets"><span class="rpg-cursor" aria-hidden="true">►</span>Projets</a></li>
+            <li><a href="#competences"><span class="rpg-cursor" aria-hidden="true">►</span>Compétences</a></li>
+            <li><a href="#parcours"><span class="rpg-cursor" aria-hidden="true">►</span>Parcours</a></li>
+            <li><a href="#contact"><span class="rpg-cursor" aria-hidden="true">►</span>Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="profil">
+            <h2>> Player_Profil_</h2>
+            <div class="profil">
+                <img src="Images/mathis-profil.jpg" alt="Photo de Mathis Beaussier" class="avatar" width="600" height="900">
+                <div class="profil-texte">
+                    <dl class="fiche-perso">
+                        <dt>Nom</dt>
+                        <dd>Mathis Beaussier</dd>
+                        <dt>Classe</dt>
+                        <dd>Développeur web junior</dd>
+                        <dt>Niveau</dt>
+                        <dd>20 ans</dd>
+                        <dt>Formation</dt>
+                        <dd>BUT MMI parcours Développement, IUT de Blois</dd>
+                        <dt>Mission</dt>
+                        <dd>Construire des sites web solides, de la base de données jusqu'à l'interface.</dd>
+                        <dt>Statut</dt>
+                        <dd class="statut">En quête d'un stage du 12 avril au 25 juin 2027<span class="cursor" aria-hidden="true">_</span></dd>
+                    </dl>
+                    <div class="actions">
+                        <a href="CV_Mathis_Beaussier.pdf" class="bouton" download="CV_Mathis_Beaussier.pdf">Télécharger mon CV (PDF)</a>
+                        <a href="#contact" class="bouton bouton-cyan">Me contacter</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projets">
+            <h2>> Mes_projets_</h2>
+            <p class="intro">Mes projets les plus aboutis d'abord. Chaque carte ouvre sa fiche détaillée.</p>
+            <!-- Une image manquante est remplacée par un écran « data-vide ». -->
+            <div class="grille-projets">
+                <a href="Projets.html#vizion" class="carte-projet">
+                    <div class="visuel" data-vide="Capture à venir">
+                        <img src="Images/vizion.jpg" alt="" loading="lazy" onerror="this.parentNode.classList.add('vide');this.remove()">
+                    </div>
+                    <div class="carte-corps">
+                        <p class="carte-etat">En ligne</p>
+                        <h3>viZion</h3>
+                        <p>Site vitrine WordPress d'une maison d'optique parisienne : collections, histoire, prise de rendez-vous.</p>
+                        <ul class="tags" aria-label="Technologies">
+                            <li>WordPress</li>
+                            <li>CSS</li>
+                            <li>Responsive</li>
+                        </ul>
+                    </div>
+                    <span class="carte-lien"><span class="rpg-cursor" aria-hidden="true">►</span>Voir la fiche</span>
+                </a>
+
+                <a href="Projets.html#pivert" class="carte-projet">
+                    <div class="visuel" data-vide="Capture à venir">
+                        <img src="Images/pivert.png" alt="" loading="lazy" onerror="this.parentNode.classList.add('vide');this.remove()">
+                    </div>
+                    <div class="carte-corps">
+                        <p class="carte-etat">En ligne</p>
+                        <h3>PiVert faunes &amp; flores</h3>
+                        <p>Site e-commerce de plantes et d'animaux, fait en binôme. J'ai développé toute la partie technique : panier, comptes, administration.</p>
+                        <ul class="tags" aria-label="Technologies">
+                            <li>PHP</li>
+                            <li>MySQL</li>
+                            <li>JavaScript</li>
+                            <li>Twig</li>
+                        </ul>
+                    </div>
+                    <span class="carte-lien"><span class="rpg-cursor" aria-hidden="true">►</span>Voir la fiche</span>
+                </a>
+
+                <a href="Projets.html#wordle" class="carte-projet">
+                    <div class="visuel" data-vide="Capture à venir">
+                        <img src="Images/imageWordle.png" alt="" loading="lazy" onerror="this.parentNode.classList.add('vide');this.remove()">
+                    </div>
+                    <div class="carte-corps">
+                        <p class="carte-etat">Jouables ici</p>
+                        <h3>Wordle et Memory</h3>
+                        <p>Deux jeux en JavaScript natif, jouables au clavier, à la souris et au doigt.</p>
+                        <ul class="tags" aria-label="Technologies">
+                            <li>JavaScript</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                        </ul>
+                    </div>
+                    <span class="carte-lien"><span class="rpg-cursor" aria-hidden="true">►</span>Voir la fiche</span>
+                </a>
+            </div>
+        </section>
+
+        <section id="competences">
+            <h2>> Mes_compétences_</h2>
+            <p class="intro">Ce que je sais faire, et où je l'ai fait :</p>
+            <ul class="grille-skills">
+                <li class="skill-card">
+                    <p class="skill"><img class="logo" src="Images/logoHTML.png" alt=""><img class="logo" src="Images/logoCSS.png" alt="">HTML5 / CSS3</p>
+                    <p>Intégration du site viZion et de ce portfolio, adaptés au mobile.</p>
+                </li>
+                <li class="skill-card">
+                    <p class="skill"><img class="logo" src="Images/logoJS.png" alt="">JavaScript</p>
+                    <p>Wordle avec dictionnaire JSON, Memory à deux joueurs, effets de ce portfolio.</p>
+                </li>
+                <li class="skill-card">
+                    <p class="skill"><img class="logo" src="Images/Php.png" alt="">PHP</p>
+                    <p>PiVert : structure du site, panier, comptes et administration.</p>
+                </li>
+                <li class="skill-card">
+                    <p class="skill"><img class="logo" src="Images/sql.png" alt="">SQL / MySQL</p>
+                    <p>Base de données relationnelle de PiVert (produits, clients, commandes).</p>
+                </li>
+                <li class="skill-card">
+                    <p class="skill"><img class="logo" src="Images/logoWordpress.png" alt="">WordPress</p>
+                    <p>Site vitrine de viZion, maison d'optique parisienne.</p>
+                </li>
+                <li class="skill-card">
+                    <p class="skill"><span class="logo-texte" aria-hidden="true">UI</span>Figma, Illustrator, InDesign</p>
+                    <p>Lecture et intégration de maquettes, identité visuelle de Pasta Tadaaa!.</p>
+                </li>
+                <li class="skill-card">
+                    <p class="skill"><span class="logo-texte" aria-hidden="true">B5</span>Bootstrap</p>
+                    <p>Mises en page responsive.</p>
+                </li>
+                <li class="skill-card">
+                    <p class="skill"><span class="logo-texte" aria-hidden="true">GIT</span>Git, GitHub, AlwaysData</p>
+                    <p>Versionnement et mise en ligne de mes projets.</p>
+                </li>
+            </ul>
+            <p class="apprentissage"><strong>En apprentissage :</strong> Laravel, React, Tailwind CSS</p>
+        </section>
+
+        <section id="parcours">
+            <h2>> Parcours_</h2>
+            <ol class="frise">
+                <li class="etape etape-future">
+                    <h3>Prochaine quête : stage 2027</h3>
+                    <p class="etape-date">12 avril – 25 juin 2027, 11 semaines</p>
+                    <p>Stage de développement web à Paris, en Centre-Val de Loire ou en Suède.</p>
+                </li>
+                <li class="etape etape-actuelle">
+                    <h3>BUT MMI, parcours Développement</h3>
+                    <p class="etape-date">2025 – 2027, IUT de Blois</p>
+                    <p>Réorientation vers le multimédia pour allier code et création numérique.</p>
+                </li>
+                <li class="etape">
+                    <h3>BUT Informatique</h3>
+                    <p class="etape-date">2024 – 2025, Orléans</p>
+                    <p>Bases solides en informatique et en développement web.</p>
+                </li>
+                <li class="etape">
+                    <h3>Bac STI2D, option SIN</h3>
+                    <p class="etape-date">2023 – 2024</p>
+                    <p>Premières bases en systèmes d'information et numérique.</p>
+                </li>
+            </ol>
+        </section>
+
+        <section id="contact">
+            <h2>> Contact_</h2>
+            <p>Un stage, une question, un projet ? Écris-moi :</p>
+            <p class="contact-email"><a href="mailto:mathisbeaussier@gmail.com">mathisbeaussier@gmail.com</a></p>
+            <div class="actions">
+                <a href="https://github.com/MathisIUT41?tab=repositories" class="bouton bouton-cyan" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/mathis-beaussier/" class="bouton bouton-cyan" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Mathis Beaussier · BUT MMI · IUT de Blois</p>
+    </footer>
+    <script src="portfolio.js"></script>
+</body>
+</html>

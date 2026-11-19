@@ -1,0 +1,688 @@
+/* =========================================================
+   Portfolio de Mathis Beaussier : thème arcade néon
+   Trois polices, chacune avec un rôle :
+   - Press Start 2P : le nom et les titres de section seulement
+     (elle dessine mal les majuscules accentuées : pas de É, À... avec elle)
+   - Jersey 10      : sous-titres, étiquettes, boutons, menu
+   - Rajdhani       : le texte courant
+   ========================================================= */
+:root {
+    --bg-color: #0d0118;
+    --bg-panel: rgba(148, 0, 211, 0.08);
+    --text-color: #e6e3ef;
+    --text-doux: #c9c3dc;
+    --neon-pink: #ff0055;
+    --neon-purple: #9400d3;
+    --neon-cyan: #00ffff;
+    --font-main: 'Rajdhani', sans-serif;
+    --font-pixel: 'Jersey 10', 'Rajdhani', sans-serif;
+    --font-retro: 'Press Start 2P', monospace;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* les ancres ne passent pas sous le menu collant */
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    font-weight: 500;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    font-variant-ligatures: none; /* sinon « fi » se colle en une seule lettre dans les polices pixel */
+}
+
+img {
+    max-width: 100%;
+}
+
+#backgroundCanvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+
+/* --- Titres --- */
+h1 {
+    font-family: var(--font-retro);
+    font-size: clamp(1.3rem, 4vw, 2.6rem);
+    line-height: 1.3;
+    color: #fff;
+    margin: 0;
+    text-shadow: 0 0 5px #fff, 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink);
+}
+
+h2 {
+    font-family: var(--font-retro);
+    font-size: 1.35rem;
+    line-height: 1.4;
+    color: var(--neon-pink);
+    text-shadow: 0 0 6px rgba(255, 0, 85, 0.7);
+    margin: 56px 0 16px;
+}
+
+h3 {
+    font-family: var(--font-pixel);
+    font-weight: 400;
+    font-size: 1.85rem;
+    line-height: 1.2;
+    color: #fff;
+    margin: 0 0 8px;
+}
+
+.intro {
+    color: var(--text-doux);
+    max-width: 65ch;
+    margin: 0 0 24px;
+}
+
+
+/* --- En-tête --- */
+.hero {
+    background-image: linear-gradient(rgba(13, 1, 24, 0.65), rgba(13, 1, 24, 0.9)), url(Images/276c345c147537a8f37821ad0ed18518.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 16vh 20px 13vh;
+    text-align: center;
+    border-bottom: 3px solid var(--neon-purple);
+}
+
+.hero-sub {
+    font-family: var(--font-pixel);
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: var(--neon-cyan);
+    text-shadow: 0 0 6px rgba(0, 255, 255, 0.6);
+    margin: 16px 0 0;
+}
+
+.hero-statut {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 18px 0 0;
+}
+
+
+/* --- Boutons --- */
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 28px;
+}
+
+.actions-centre {
+    justify-content: center;
+}
+
+.bouton {
+    display: inline-block;
+    padding: 10px 22px;
+    font-family: var(--font-pixel);
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--neon-pink);
+    text-decoration: none;
+    border: 3px solid var(--neon-pink);
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgba(255, 0, 85, 0.6);
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.bouton:hover {
+    color: var(--bg-color);
+    background-color: var(--neon-pink);
+    box-shadow: 0 0 20px var(--neon-pink);
+}
+
+.bouton-cyan {
+    color: var(--neon-cyan);
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+}
+
+.bouton-cyan:hover {
+    background-color: var(--neon-cyan);
+    box-shadow: 0 0 20px var(--neon-cyan);
+}
+
+
+/* --- Menu --- */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(13, 1, 24, 0.95);
+    border-bottom: 3px solid var(--neon-cyan);
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px 28px;
+    list-style: none;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px 16px;
+}
+
+nav a {
+    display: inline-block;
+    padding: 6px 12px;
+    font-family: var(--font-pixel);
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--neon-cyan);
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+nav a:hover {
+    color: #fff;
+    border-color: var(--neon-cyan);
+    background-color: rgba(0, 255, 255, 0.1);
+}
+
+/* Curseur de menu façon RPG, qui apparaît au survol */
+.rpg-cursor {
+    display: inline-block;
+    margin-right: 6px;
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+nav a:hover .rpg-cursor,
+nav a:focus-visible .rpg-cursor,
+.carte-projet:hover .rpg-cursor,
+.carte-projet:focus-visible .rpg-cursor {
+    opacity: 1;
+    transform: none;
+}
+
+
+/* --- Contenu --- */
+main {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 8px 20px 40px;
+}
+
+
+/* --- Profil --- */
+.profil {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.avatar {
+    flex: none;
+    width: 220px;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: 50% 22%;
+    border: 3px solid var(--neon-cyan);
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.6);
+}
+
+.profil-texte {
+    flex: 1;
+    min-width: 0;
+}
+
+.fiche-perso {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    align-items: baseline;
+    gap: 8px 18px;
+    margin: 0;
+}
+
+.fiche-perso dt {
+    font-family: var(--font-pixel);
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: var(--neon-cyan);
+}
+
+.fiche-perso dt::before {
+    content: "> ";
+}
+
+.fiche-perso dd {
+    margin: 0;
+    color: #fff;
+}
+
+.fiche-perso .statut {
+    color: var(--neon-pink);
+    font-weight: 700;
+}
+
+.cursor {
+    color: var(--neon-cyan);
+    margin-left: 2px;
+    animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+
+/* --- Visuel (capture d'écran ou écran « vide ») --- */
+.visuel {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: #000;
+    border-bottom: 2px solid var(--neon-purple);
+}
+
+.visuel img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+/* Quand l'image manque : un écran à lignes de balayage avec le texte de data-vide */
+.visuel.vide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.05) 0 2px, transparent 2px 4px),
+        radial-gradient(circle at 50% 50%, rgba(148, 0, 211, 0.4), #000 75%);
+}
+
+.visuel.vide::after {
+    content: attr(data-vide);
+    font-family: var(--font-pixel);
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--neon-cyan);
+    text-shadow: 0 0 6px rgba(0, 255, 255, 0.7);
+}
+
+
+/* --- Projets --- */
+.grille-projets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.carte-projet {
+    display: flex;
+    flex-direction: column;
+    color: inherit;
+    text-decoration: none;
+    border: 2px solid var(--neon-purple);
+    background: var(--bg-panel);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.carte-projet:hover {
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 18px rgba(0, 255, 255, 0.35);
+}
+
+.carte-corps {
+    flex: 1;
+    padding: 18px 20px 4px;
+}
+
+.carte-corps p {
+    margin: 0 0 14px;
+}
+
+.carte-corps .carte-etat {
+    font-family: var(--font-pixel);
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--neon-cyan);
+    margin-bottom: 6px;
+}
+
+/* Petit voyant carré devant l'état du projet */
+.carte-etat::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 8px;
+    vertical-align: 2px;
+    background: currentColor;
+    box-shadow: 0 0 6px currentColor;
+}
+
+.carte-corps .en-cours {
+    color: var(--neon-pink);
+}
+
+.carte-lien {
+    padding: 4px 20px 18px;
+    font-family: var(--font-pixel);
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--neon-pink);
+}
+
+/* Le curseur ► apparaît dans la marge, sans décaler le texte */
+.carte-lien {
+    position: relative;
+}
+
+.carte-lien .rpg-cursor {
+    position: absolute;
+    left: 4px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 14px;
+}
+
+.tags li {
+    font-family: var(--font-pixel);
+    font-size: 1.15rem;
+    color: #fff;
+    background: rgba(148, 0, 211, 0.55);
+    border: 1px solid var(--neon-purple);
+    border-radius: 3px;
+    padding: 1px 10px;
+}
+
+
+/* --- Compétences --- */
+.grille-skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-card {
+    border: 1px solid rgba(0, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.04);
+    padding: 16px;
+}
+
+.skill-card p {
+    margin: 0;
+}
+
+.skill-card .skill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-family: var(--font-pixel);
+    font-size: 1.45rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.logo {
+    flex: none;
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+}
+
+.logo + .logo {
+    margin-left: -6px;
+}
+
+.logo-texte {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    width: 36px;
+    height: 36px;
+    box-sizing: border-box;
+    border: 2px solid var(--neon-cyan);
+    color: var(--neon-cyan);
+    font-size: 1rem;
+}
+
+.apprentissage {
+    margin: 24px 0 0;
+}
+
+.apprentissage strong {
+    font-family: var(--font-pixel);
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--neon-cyan);
+}
+
+
+/* --- Parcours : une frise verticale, du plus récent au plus ancien --- */
+.frise {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 36px;
+}
+
+/* La ligne : centrée à 10,5 px du bord gauche */
+.frise::before {
+    content: "";
+    position: absolute;
+    left: 9px;
+    top: 8px;
+    bottom: 8px;
+    width: 3px;
+    background: var(--neon-purple);
+    box-shadow: 0 0 10px rgba(148, 0, 211, 0.6);
+}
+
+.etape {
+    position: relative;
+    margin-bottom: 20px;
+    padding: 18px 22px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(0, 255, 255, 0.15);
+    border-radius: 6px;
+}
+
+/* La pastille : 21 px de large, placée pour que son centre tombe sur la ligne */
+.etape::before {
+    content: "";
+    position: absolute;
+    left: -36px;
+    top: 18px;
+    width: 21px;
+    height: 21px;
+    box-sizing: border-box;
+    border: 3px solid var(--neon-purple);
+    border-radius: 50%;
+    background: var(--bg-color);
+}
+
+.etape-actuelle::before {
+    border-color: var(--neon-pink);
+    box-shadow: 0 0 12px var(--neon-pink);
+}
+
+.etape-future {
+    border: 1px dashed var(--neon-pink);
+}
+
+.etape-future::before {
+    border-style: dashed;
+    border-color: var(--neon-pink);
+}
+
+.etape p {
+    margin: 0;
+}
+
+.etape .etape-date {
+    font-family: var(--font-pixel);
+    font-size: 1.3rem;
+    color: var(--neon-cyan);
+    margin-bottom: 6px;
+}
+
+
+/* --- Contact --- */
+.contact-email a {
+    font-family: var(--font-pixel);
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--neon-pink);
+    text-shadow: 0 0 6px rgba(255, 0, 85, 0.6);
+    overflow-wrap: anywhere;
+}
+
+
+/* --- Pied de page --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+    border-top: 2px solid var(--neon-purple);
+    background-color: rgba(13, 1, 24, 0.85);
+    color: var(--text-doux);
+    font-size: 1rem;
+}
+
+footer a {
+    color: var(--neon-pink);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* Contour visible au clavier (accessibilité) */
+:focus-visible {
+    outline: 2px solid var(--neon-cyan);
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   Téléphones et tablettes
+   ========================================================= */
+@media (max-width: 768px) {
+    html {
+        scroll-padding-top: 90px;
+    }
+
+    .hero {
+        padding: 70px 20px 60px;
+    }
+
+    .hero-sub {
+        font-size: 1.4rem;
+    }
+
+    nav ul {
+        gap: 0 4px;
+        padding: 6px 8px;
+    }
+
+    nav a {
+        font-size: 1.2rem;
+        padding: 4px 8px;
+    }
+
+    /* Pas de survol sur écran tactile : le curseur prendrait de la place pour rien */
+    nav .rpg-cursor {
+        display: none;
+    }
+
+    h2 {
+        font-size: 1rem;
+        margin-top: 44px;
+    }
+
+    h3 {
+        font-size: 1.6rem;
+    }
+
+    .profil {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .avatar {
+        width: 180px;
+    }
+
+    .fiche-perso {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .fiche-perso dd {
+        margin-bottom: 10px;
+    }
+
+    .bouton {
+        font-size: 1.3rem;
+        padding: 9px 16px;
+    }
+
+    .frise {
+        padding-left: 30px;
+    }
+
+    .etape {
+        padding: 14px 16px;
+    }
+
+    .etape::before {
+        left: -30px;
+        top: 15px;
+    }
+
+    .contact-email a {
+        font-size: 1.4rem;
+    }
+}
+
+
+/* =========================================================
+   Moins d'animations si le système le demande
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}

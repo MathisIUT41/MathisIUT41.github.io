@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets – Mathis Beaussier</title>
+    <meta name="description" content="Les projets de Mathis Beaussier : site WordPress viZion, e-commerce PiVert en PHP/MySQL, jeux Wordle et Memory en JavaScript natif.">
+    <meta name="theme-color" content="#0d0118">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Jersey+10&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="stylesProjets.css">
+</head>
+<body>
+
+    <nav aria-label="Navigation des projets">
+        <ul>
+            <li><a href="index.html"><span class="rpg-cursor" aria-hidden="true">►</span>Accueil</a></li>
+            <li><a href="#vizion"><span class="rpg-cursor" aria-hidden="true">►</span>viZion</a></li>
+            <li><a href="#pivert"><span class="rpg-cursor" aria-hidden="true">►</span>PiVert</a></li>
+            <li><a href="#wordle"><span class="rpg-cursor" aria-hidden="true">►</span>Wordle</a></li>
+            <li><a href="#memory"><span class="rpg-cursor" aria-hidden="true">►</span>Memory</a></li>
+        </ul>
+    </nav>
+
+    <main class="page-projets">
+        <h1>Mes_projets_</h1>
+
+        <!-- Pour chaque projet, pense à ajouter une ligne « Cadre » : projet de cours ou réel,
+             seul ou en équipe (combien ?), durée. Exemple :
+             <dt>Cadre</dt><dd>Projet de BUT MMI, en équipe de 3, 6 semaines.</dd> -->
+
+        <section id="vizion" class="fiche">
+            <h2>> viZion_</h2>
+            <div class="ecran">
+                <div class="visuel" data-vide="Capture à venir">
+                    <img src="Images/vizion.jpg" alt="Page d'accueil du site viZion Maison d'Optique" loading="lazy" onerror="this.parentNode.classList.add('vide');this.remove()">
+                </div>
+                <p class="fiche-meta"><span class="voyant"></span>Site WordPress, en ligne</p>
+                <dl class="fiche-infos">
+                    <dt>Contexte</dt>
+                    <dd>Site vitrine de viZion, maison d'optique parisienne : collections de montures, histoire de la maison, prise de rendez-vous.</dd>
+                    <dt>Mon rôle</dt>
+                    <dd>Intégration sous WordPress, personnalisation de l'interface en CSS, création des éléments graphiques et adaptation au mobile.</dd>
+                    <dt>Technos</dt>
+                    <dd>WordPress, CSS, design graphique</dd>
+                    <!-- À compléter : <dt>Défi</dt><dd>une difficulté que tu as résolue sur ce projet, et comment.</dd> -->
+                </dl>
+                <a href="https://vizion.uno/" class="btn-play" target="_blank" rel="noopener noreferrer">Voir le site</a>
+            </div>
+        </section>
+
+        <section id="pivert" class="fiche">
+            <h2>> PiVert_</h2>
+            <div class="ecran">
+                <div class="visuel" data-vide="Capture à venir">
+                    <img src="Images/pivert.png" alt="Page d'accueil du site PiVert faunes et flores" loading="lazy" onerror="this.parentNode.classList.add('vide');this.remove()">
+                </div>
+                <p class="fiche-meta"><span class="voyant"></span>Site e-commerce, en ligne</p>
+                <dl class="fiche-infos">
+                    <dt>Contexte</dt>
+                    <dd>PiVert faunes &amp; flores, site e-commerce de plantes et d'animaux. Projet de 1re année de BUT MMI (SAÉ 203), réalisé en binôme. En 2026, j'ai refait tout le front et l'administration : une seule identité visuelle, gabarits Twig, site responsive et sécurisé. C'est cette version qui est en ligne.</dd>
+                    <dt>Mon rôle</dt>
+                    <dd>Toute la partie technique : structure PHP du site, base de données, panier, connexion et inscription, espace d'administration, page Univers Végétal et mise en ligne. Mon binôme a réalisé l'accueil et la page Univers Animal.</dd>
+                    <dt>Technos</dt>
+                    <dd>PHP, MySQL, JavaScript, Twig, hébergement Hostinger</dd>
+                    <dt>Défi</dt>
+                    <dd>Une seule pop-up produit, générique : au clic, elle se remplit en JavaScript avec les informations du produit choisi, au lieu d'écrire une pop-up par produit.</dd>
+                </dl>
+                <a href="https://pivert.thecipherbureau.fr" class="btn-play" target="_blank" rel="noopener noreferrer">Voir le site</a>
+                <a href="https://github.com/MathisIUT41/projet-SiteWebPiVert" class="btn-play" target="_blank" rel="noopener noreferrer">Voir le code</a>
+            </div>
+        </section>
+
+        <section id="wordle" class="fiche">
+            <h2>> Wordle_</h2>
+            <div class="ecran">
+                <!-- Capture à refaire en pleine partie, avec des cases colorées. -->
+                <div class="visuel" data-vide="Capture à venir">
+                    <img src="Images/imageWordle.png" alt="Capture du jeu Wordle" loading="lazy" onerror="this.parentNode.classList.add('vide');this.remove()">
+                </div>
+                <p class="fiche-meta"><span class="voyant"></span>Jeu en JavaScript natif, jouable ici</p>
+                <dl class="fiche-infos">
+                    <dt>Contexte</dt>
+                    <dd>Jeu de lettres : trouver le mot caché en 6 essais, sur un thème au choix (animaux, pays, sports).</dd>
+                    <dt>Mon rôle</dt>
+                    <dd>Développement complet en JavaScript natif, sans bibliothèque.</dd>
+                    <dt>Points clés</dt>
+                    <dd>Dictionnaire de validation chargé en JSON (fetch + Set) pour refuser les mots qui n'existent pas. Clavier qui se colore au fil des essais. Jouable au clavier, à la souris et au doigt.</dd>
+                    <dt>Défi</dt>
+                    <dd>Colorer juste les lettres en double : l'algorithme fait deux passages, d'abord les lettres bien placées, puis celles présentes ailleurs dans le mot.</dd>
+                </dl>
+                <a href="jeux/Wordle/wordle.html" class="btn-play">Insert coin : jouer</a>
+            </div>
+        </section>
+
+        <section id="memory" class="fiche">
+            <h2>> Memory_</h2>
+            <div class="ecran">
+                <!-- Capture à refaire en pleine partie, avec des cartes retournées. -->
+                <div class="visuel" data-vide="Capture à venir">
+                    <img src="Images/mémorieImage.png" alt="Capture du jeu Memory" loading="lazy" onerror="this.parentNode.classList.add('vide');this.remove()">
+                </div>
+                <p class="fiche-meta"><span class="voyant"></span>Jeu en JavaScript natif, jouable ici</p>
+                <dl class="fiche-infos">
+                    <dt>Contexte</dt>
+                    <dd>Jeu de mémoire : retrouver toutes les paires le plus vite possible, seul ou à deux.</dd>
+                    <dt>Mon rôle</dt>
+                    <dd>Développement complet en JavaScript natif, du plateau de cartes à l'écran de victoire.</dd>
+                    <dt>Points clés</dt>
+                    <dd>7 thèmes de cartes, dont un thème illustré maison. Difficulté réglable par nombre de paires, avec une grille qui s'adapte. Chronomètre et compteur de coups. Mode deux joueurs en local.</dd>
+                    <dt>Défi</dt>
+                    <dd>Bloquer les clics pendant la vérification d'une paire, et passer la main au bon joueur en mode deux joueurs.</dd>
+                </dl>
+                <a href="jeux/mémorie/memorie.html" class="btn-play">Insert coin : jouer</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Mathis Beaussier · <a href="index.html">Retour au portfolio</a></p>
+    </footer>
+
+    <script src="portfolio.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle – Mathis Beaussier</title>
+    <meta name="description" content="Jeu de lettres en JavaScript natif réalisé par Mathis Beaussier.">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link rel="stylesheet" href="wordle.css">
+</head>
+<body>
+    <div class="wordle-entete">
+        <a href="../../Projets.html#wordle" class="retour">← Retour aux projets</a>
+        <h1>WORDLE</h1>
+    </div>
+
+    <p id="message" role="status" aria-live="polite"></p>
+
+    <div id="grille" aria-label="Grille de jeu"></div>
+
+    <div id="Ligne_1" class="clavier-lignes">
+        <button type="button" class="Touche" data-key="A">A</button>
+        <button type="button" class="Touche" data-key="Z">Z</button>
+        <button type="button" class="Touche" data-key="E">E</button>
+        <button type="button" class="Touche" data-key="R">R</button>
+        <button type="button" class="Touche" data-key="T">T</button>
+        <button type="button" class="Touche" data-key="Y">Y</button>
+        <button type="button" class="Touche" data-key="U">U</button>
+        <button type="button" class="Touche" data-key="I">I</button>
+        <button type="button" class="Touche" data-key="O">O</button>
+        <button type="button" class="Touche" data-key="P">P</button>
+    </div>
+    <div id="Ligne_2" class="clavier-lignes">
+        <button type="button" class="Touche" data-key="Q">Q</button>
+        <button type="button" class="Touche" data-key="S">S</button>
+        <button type="button" class="Touche" data-key="D">D</button>
+        <button type="button" class="Touche" data-key="F">F</button>
+        <button type="button" class="Touche" data-key="G">G</button>
+        <button type="button" class="Touche" data-key="H">H</button>
+        <button type="button" class="Touche" data-key="J">J</button>
+        <button type="button" class="Touche" data-key="K">K</button>
+        <button type="button" class="Touche" data-key="L">L</button>
+        <button type="button" class="Touche" data-key="M">M</button>
+    </div>
+    <div id="Ligne_3" class="clavier-lignes">
+        <button type="button" class="Touche large" data-key="ENTER">ENTRÉE</button>
+        <button type="button" class="Touche" data-key="W">W</button>
+        <button type="button" class="Touche" data-key="X">X</button>
+        <button type="button" class="Touche" data-key="C">C</button>
+        <button type="button" class="Touche" data-key="V">V</button>
+        <button type="button" class="Touche" data-key="B">B</button>
+        <button type="button" class="Touche" data-key="N">N</button>
+        <button type="button" class="Touche large" data-key="BACKSPACE" aria-label="Effacer">⌫</button>
+    </div>
+
+    <div id="menu-selection">
+        <label for="choix-theme">Thème :</label>
+        <select id="choix-theme">
+            <option value="animaux.json">🐾 Animaux</option>
+            <option value="pays.json">🌍 Pays</option>
+            <option value="sports.json">⚽ Sports</option>
+        </select>
+    </div>
+    <div class="boutons">
+        <button id="Validation" type="button">Valider</button>
+        <button id="rejouer" type="button">Nouvelle partie</button>
+    </div>
+
+    <script src="wordle.js"></script>
+</body>
+</html>

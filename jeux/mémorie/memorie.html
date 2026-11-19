@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory – Mathis Beaussier</title>
+    <link rel="stylesheet" href="memorie.css">
+</head>
+<body>
+    <div class="conteneur">
+        
+        <div id="ecran-accueil">
+            <h1 class="glitch">> MEMORY</h1>
+            
+            <div class="selection-arcade">
+                <div class="option-group">
+                    <label for="theme">> CHOISIR_THEME</label>
+                    <select id="theme">
+                        <option value="0">Fruits 🍎</option>
+                        <option value="1">Animaux 🐶</option>
+                        <option value="2">Drapeaux 🇫🇷</option>
+                        <option value="3">Visages 😊</option>
+                        <option value="4">Objets 📱</option>
+                        <option value="5">Loisirs ⚽</option>
+                        <option value="6">Edition raclette 🐹</option>
+                        <option value="aleatoire">Aléatoire 🎲</option>
+                    </select>
+                </div>
+
+                <div class="option-group">
+                    <label for="difficulte">> DIFFICULTÉ</label>
+                    <select id="difficulte">
+                        <option value="10">FACILE (10 Paires)</option>
+                        <option value="6">RAPIDE (6 Paires)</option>
+                        <option value="4">NOOB (4 Paires)</option>
+                    </select>
+                </div>
+
+                
+                <div class="option-group">
+                    <label for="mode">> MODE DE JEU</label>
+                    <select id="mode">
+                        <option value="solo">SOLO</option>
+                        <option value="1v1">1V1</option>
+                    </select>
+                </div>
+            </div>
+             <button class="btn-arcade" onclick="lancerJeu()">INSERT_COIN (START)</button>
+             <div class="navigation-externe">
+    <button class="btn-arcade secondary" onclick="retournerPortfolio()">
+        << RETOUR_PORTFOLIO
+    </button>
+</div>
+        </div> <div id="zone-jeu" class="cache">
+            <h1>Partie en cours...</h1>
+                
+            <div class="infos-jeu">
+        <div id="info-solo">Coups : <span id="coups">0</span></div>
+        
+        <div id="info-1v1" class="cache">
+            <span id="ecran-joueur1">P1: <span id="score-joueur1">0</span></span> | 
+            <span id="ecran-joueur2">P2: <span id="score-joueur2">0</span></span>
+        </div>
+        
+        <p>Temps : <span id="chronometre">0</span></p>
+    </div>
+        <button class="btn-arcade-mini" onclick="retournerAccueil()">QUITTER_PARTIE</button>
+    <div id="conteneur-cartes" class="grid"></div>
+    </div>
+    
+    </div>
+    
+
+    
+
+    <div id="ecran-victoire" class="cache">
+        <div class="contenu-victoire">
+            <img src="images/Victoire.png" alt="Trophée" class="image-trophee">
+            <h2>Félicitations !</h2>
+            <p id="texte-resultat"></p>
+            <button onclick="resetgame()">Rejouer</button>
+            <button onclick="retournerAccueil()">MENU_PRINCIPAL</button>
+        </div>
+        
+    </div>
+
+   
+
+    <script src="memorie.js"></script>
+</body>
+</html>

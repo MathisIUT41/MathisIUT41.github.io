@@ -1,0 +1,15 @@
+body { font-family: sans-serif; 
+        text-align: center; 
+        padding-top: 50px; }
+
+#affichage-mot { font-size: 2rem; 
+    letter-spacing: 10px; 
+    margin: 20px; 
+    font-family: monospace; }
+
+.info { 
+        color: #555;
+     }
+
+#message { font-weight: bold;
+             margin-top: 20px; }
