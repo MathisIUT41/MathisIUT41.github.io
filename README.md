@@ -12,7 +12,7 @@ Je recherche un **stage de développement web du 12 avril au 25 juin 2027** (11 
 
 | Projet | Technos | Statut |
 |---|---|---|
-| **viZion** – site vitrine d'une maison d'optique parisienne ([vizion.uno](https://vizion.uno/)) | WordPress, CSS, design graphique | En ligne |
+| **viZion** – site vitrine d'une maison d'optique fictive (projet universitaire) · [vizion.uno](https://vizion.uno/) | WordPress, CSS, design graphique | Projet universitaire |
 | **PiVert faunes & flores** – site e-commerce en binôme (SAÉ), front et admin refaits en 2026 : panier, comptes, administration, base de données ([site](https://pivert.thecipherbureau.fr) · [code](https://github.com/MathisIUT41/projet-SiteWebPiVert)) | PHP, MySQL, JavaScript, Twig | En ligne |
 | **Wordle** – jeu de lettres avec dictionnaire de validation en JSON | JavaScript natif | Jouable |
 | **Memory** – jeu de paires avec 7 thèmes, chronomètre et mode deux joueurs | JavaScript natif | Jouable |
